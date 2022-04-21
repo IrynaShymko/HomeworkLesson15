@@ -1,3 +1,4 @@
+import Pages.CategoryPage;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,10 +10,10 @@ public class CategoryPageTest extends TestBase {
 
     @Test
     public void shouldShowTheSameBigAndSmallImages() {
-        assertTrue(mainPage.navigateAndHoverWomenLabel()
-                .navigateAndClickBlousesLabel()
-                .navigateAndHoverImage()
-                .navigateAndClickQuickViewButton()
-                .isBigPictureTheSameThatMiniature(), "Error: Picture on miniature and Big picture are different");
+        CategoryPage categoryPage = mainPage.navigateAndHoverWomenLabel()
+                .navigateAndClickBlousesLabel();
+        categoryPage.navigateAndHoverImage()
+                .navigateAndClickQuickViewButton();
+        assertTrue(categoryPage.isBigPictureTheSameThatMiniature(), "Error: Picture on miniature and Big picture are different");
     }
 }
