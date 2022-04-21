@@ -55,7 +55,6 @@ public class CategoryPage extends BasePage {
         for (int i = 0; i < miniatureIconsList.size(); i++) {
             navigateAndHoverWebElement(miniatureIconsList.get(i));
             logger.info("<<<<<<<<<< Navigate to miniature element " + (i + 1));
-            clickOnElement(miniatureIconsList.get(i));
             String srcMiniature = miniatureIconsList.get(i).getAttribute("src").substring(0, 39);
             logger.info("<<<<<<<<<< source Miniature of icon " + (i + 1) + " is " + srcMiniature);
             navigateAndHoverWebElement(bigPicture);
