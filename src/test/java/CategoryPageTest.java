@@ -8,7 +8,7 @@ public class CategoryPageTest extends TestBase {
     private static Logger logger = LoggerFactory.getLogger("CategoryPageTest.class");
 
     @Test
-    public void shouldMaximizeImages() {
+    public void shouldShowTheSameBigAndSmallImages() {
         assertTrue(mainPage.navigateAndHoverWomenLabel()
                 .navigateAndClickBlousesLabel()
                 .navigateAndHoverImage()
