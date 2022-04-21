@@ -50,13 +50,13 @@ public class CategoryPage extends BasePage {
 
     public Boolean isBigPictureTheSameThatMiniature() {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframeProductDetails));
-        logger.info("<<<<<<<<<< switch to iframe");
+        logger.info("<<<<<<<<<< Switch to iframe");
         Boolean result = false;
         for (int i = 0; i < miniatureIconsList.size(); i++) {
             navigateAndHoverWebElement(miniatureIconsList.get(i));
             logger.info("<<<<<<<<<< Navigate to miniature element " + (i + 1));
             String srcMiniature = miniatureIconsList.get(i).getAttribute("src").substring(0, 39);
-            logger.info("<<<<<<<<<< source Miniature of icon " + (i + 1) + " is " + srcMiniature);
+            logger.info("<<<<<<<<<< Source Miniature of icon " + (i + 1) + " is " + srcMiniature);
             navigateAndHoverWebElement(bigPicture);
             logger.info("<<<<<<<<<< Navigate to big picture ");
             String srcBigPicture = bigPicture.getAttribute("src").substring(0, 39);
