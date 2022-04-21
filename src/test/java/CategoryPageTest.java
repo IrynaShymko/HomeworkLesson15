@@ -13,6 +13,6 @@ public class CategoryPageTest extends TestBase {
                 .navigateAndClickBlousesLabel()
                 .navigateAndHoverImage()
                 .navigateAndClickQuickViewButton()
-                .isBigPictureTheSameThatMiniature(), "Error: Pictures on miniature and Big picture are different");
+                .isBigPictureTheSameThatMiniature(), "Error: Picture on miniature and Big picture are different");
     }
 }
