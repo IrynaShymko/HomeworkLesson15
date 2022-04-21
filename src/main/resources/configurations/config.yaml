@@ -1,0 +1,22 @@
+browser:
+  browserName: chrome #firefox
+  webElementTimeOut: 25  #Explicitly wait
+  webBrowserImplicitTimeOut: 10
+
+
+
+environment:
+  intEnv:
+    appUrl: http://automationpractice.com/
+    env_name: intEnv
+    active: true
+
+  testEnv:
+    appUrl: http://automationpractice.com/
+    env_name: testEnv
+    active: false
+
+  defaultEnv:
+    appUrl: http://automationpractice.com/
+    env_name: defaultEnv
+    active: false
