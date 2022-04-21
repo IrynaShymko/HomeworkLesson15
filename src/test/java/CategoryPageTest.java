@@ -4,12 +4,11 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class CategoryPageTest extends TestBase{
-
+public class CategoryPageTest extends TestBase {
     private static Logger logger = LoggerFactory.getLogger("CategoryPageTest.class");
 
     @Test
-    public void shouldMaximizeImages(){
+    public void shouldMaximizeImages() {
         assertTrue(mainPage.navigateAndHoverWomenLabel()
                 .navigateAndClickBlousesLabel()
                 .navigateAndHoverImage()

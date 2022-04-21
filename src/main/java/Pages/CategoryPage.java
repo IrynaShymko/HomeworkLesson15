@@ -34,37 +34,39 @@ public class CategoryPage extends BasePage {
     private WebElement bigPicture;
 
 
-    public CategoryPage navigateAndHoverImage(){
+    public CategoryPage navigateAndHoverImage() {
         scrollToElement(blousesImage);
         navigateAndHoverWebElement(blousesImage);
         logger.info("<<<<<<<<<< Navigate to Product Image");
         return this;
     }
 
-    public CategoryPage navigateAndClickQuickViewButton(){
+    public CategoryPage navigateAndClickQuickViewButton() {
         navigateAndHoverWebElement(quickViewButton);
         logger.info("<<<<<<<<<< Navigate to Quick View Button");
         clickOnElement(quickViewButton);
         return this;
     }
 
-    public Boolean isBigPictureTheSameThatMiniature(){
+    public Boolean isBigPictureTheSameThatMiniature() {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframeProductDetails));
         logger.info("<<<<<<<<<< switch to iframe");
-        Boolean result=false;
-        for(int i =0; i<miniatureIconsList.size(); i++){
+        Boolean result = false;
+        for (int i = 0; i < miniatureIconsList.size(); i++) {
             navigateAndHoverWebElement(miniatureIconsList.get(i));
-            logger.info("<<<<<<<<<< Navigate to miniature element "+ (i+1));
+            logger.info("<<<<<<<<<< Navigate to miniature element " + (i + 1));
             clickOnElement(miniatureIconsList.get(i));
-            String srcMiniature = miniatureIconsList.get(i).getAttribute("src").substring(0,39);
-            logger.info("<<<<<<<<<< source Miniature of icon "+ (i+1) +" is "+ srcMiniature);
+            String srcMiniature = miniatureIconsList.get(i).getAttribute("src").substring(0, 39);
+            logger.info("<<<<<<<<<< source Miniature of icon " + (i + 1) + " is " + srcMiniature);
             navigateAndHoverWebElement(bigPicture);
             logger.info("<<<<<<<<<< Navigate to big picture ");
-            String srcBigPicture = bigPicture.getAttribute("src").substring(0,39);
-            logger.info("<<<<<<<<<< Source BigPicture in case "+ (i+1) +"  is " +srcBigPicture);
-            if (srcMiniature.equals(srcBigPicture)) {result=true;
+            String srcBigPicture = bigPicture.getAttribute("src").substring(0, 39);
+            logger.info("<<<<<<<<<< Source BigPicture in case " + (i + 1) + "  is " + srcBigPicture);
+            if (srcMiniature.equals(srcBigPicture)) {
+                result = true;
+            } else {
+                result = false;
             }
-            else {result=false;}
         }
         return result;
     }

@@ -26,13 +26,13 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@title='Blouses']")
     private WebElement blousesLabel;
 
-    public MainPage navigateAndHoverWomenLabel(){
+    public MainPage navigateAndHoverWomenLabel() {
         navigateAndHoverWebElement(womanLabel);
         logger.info("<<<<<<<<<< Navigate to Women Label");
         return this;
     }
 
-    public CategoryPage navigateAndClickBlousesLabel(){
+    public CategoryPage navigateAndClickBlousesLabel() {
         navigateAndHoverWebElement(blousesLabel);
         logger.info("<<<<<<<<<< Navigate to Blouses Label");
         clickOnElement(blousesLabel);
